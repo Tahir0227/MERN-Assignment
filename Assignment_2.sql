@@ -46,3 +46,12 @@ JOIN course c ON s.course_id = c.course_id;
 SELECT s.*,c.course_name,c.description,c.fees,c.start_date,c.end_date,c.video_expire_days
 FROM student s
 LEFT JOIN Course c ON s.course_id=c.course_id;
+
+---Q.4
+SELECT c.course_id,c.course_name,c.start_date,c.end_date,c.video_expire_days,v.video_id,v.title,v.added_at
+FROM student s 
+JOIN Course c ON s.course_id=c.course_id
+JOIN videos v ON c.course_id=v.course_id
+WHERE s.emial = 'bob@example.com' 
+AND CURDATE() <= DATE_ADD(v.added_at , INTERVAL c.video_expire_days DAY);
+
