@@ -60,6 +60,18 @@
         button:hover {
             background: #1acc1a;
         }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .input-error {
+            border: 2px solid red;
+        }
+
     </style>
 </head>
 <body>
@@ -67,16 +79,20 @@
 <div class="login-container">
     <h2>Login</h2>
 
-    <form>
+    <form id="loginForm" onsubmit="return validateForm()">
         <label>Email address</label>
-        <input type="email" placeholder="Enter email" required>
+        <input type="email" id="email" placeholder="Enter email">
+        <small id="emailError" class="error"></small>
 
         <label>Password</label>
-        <input type="password" placeholder="Password" required>
+        <input type="password" id="password" placeholder="Enter Password">
+        <small id="passwordError" class="error"></small>
 
-        <button type="submit">Login</button>
+        <button id="btn1" type="submit">Login</button>
+
     </form>
 </div>
 
+    <script src="formValidation.js"></script>
 </body>
 </html>

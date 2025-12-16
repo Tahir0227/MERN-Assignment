@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>ToDo app</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .todo-container {
+            background: #fff;
+            width: 380px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 6px 0 18px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #218afb;
+        }
+
+        button {
+            padding: 10px;
+            background: #21fb21;
+            color: #000000;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+    
+
+        .delete {
+            background: #dc3545;
+            color: white;
+        }
+
+        li {
+            list-style: none;
+            display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        border-top: 1px solid #eee;
+        padding-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="todo-container">
+        <h1>Todo app</h1>
+
+        <input type="text" id="todos" placeholder="Enter a todo" >
+        <button class="add" onclick="addTodo()">Add</button>
+        <ul id="list"></ul> 
+
+    </div>
+    <script src="add_todos.js"></script>
+</body>
+</html>
