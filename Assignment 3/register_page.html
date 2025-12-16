@@ -47,18 +47,28 @@
             width: 50%;
             padding: 10px;
             background: #21fb21;
-            color: #000000;
+            color: #000;
             border: none;
             border-radius: 6px;
             font-size: 16px;
             cursor: pointer;
-
             display: block;
             margin: auto;
         }
 
         button:hover {
             background: #1acc1a;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .input-error {
+            border: 2px solid red;
         }
     </style>
 </head>
@@ -67,22 +77,33 @@
 <div class="login-container">
     <h2>Register</h2>
 
-    <form>
+    <form id="registerForm">
+
         <label>Name</label>
-        <input type="text" placeholder="Enter name" required>
+        <input type="text" id="name" placeholder="Enter name">
+        <small id="nameError" class="error"></small>
 
         <label>Email address</label>
-        <input type="email" placeholder="Enter email" required>
+        <input type="email" id="email" placeholder="Enter email">
+        <small id="emailError" class="error"></small>
 
         <label>Password</label>
-        <input type="password" placeholder="Enter password" required>
+        <input type="password" id="password" placeholder="Enter password">
+        <small id="passwordError" class="error"></small>
 
         <label>Phone number</label>
-        <input type="number" placeholder="Enter phone number" required>
+        <input type="text" id="phone" placeholder="Enter phone number">
+        <small id="phoneError" class="error"></small>
 
-        <button type="submit">Register</button>
+        <button id="btnRegister" type="button">Register</button>
+
+        <p id="successMsg" style="color:green; text-align:center; display:none;">
+            Registration successful!
+        </p>
+
     </form>
 </div>
 
+<script src="registerValidation.js"></script>
 </body>
 </html>

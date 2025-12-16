@@ -79,7 +79,8 @@
 <div class="login-container">
     <h2>Login</h2>
 
-    <form id="loginForm" onsubmit="return validateForm()">
+    <form id="loginForm">
+
         <label>Email address</label>
         <input type="email" id="email" placeholder="Enter email">
         <small id="emailError" class="error"></small>
@@ -88,11 +89,15 @@
         <input type="password" id="password" placeholder="Enter Password">
         <small id="passwordError" class="error"></small>
 
-        <button id="btn1" type="submit">Login</button>
+        <button id="btn1" type="button">Login</button>
+
+        <p id="successMsg" style="color:green; text-align:center; display:none;">
+            Login successfully!
+        </p>
 
     </form>
-</div>
 
+</div>
     <script src="formValidation.js"></script>
 </body>
 </html>

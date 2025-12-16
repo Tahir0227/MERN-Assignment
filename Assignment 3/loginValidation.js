@@ -1,19 +1,23 @@
-function validateForm() {
+let email = document.getElementById("email");
+let password = document.getElementById("password");
 
-    let email = document.getElementById("email");
-    let password = document.getElementById("password");
+let emailError = document.getElementById("emailError");
+let passwordError = document.getElementById("passwordError");
+let successMsg = document.getElementById("successMsg");
 
-    let emailError = document.getElementById("emailError");
-    let passwordError = document.getElementById("passwordError");
+let button = document.getElementById("btn1");
+
+button.addEventListener("click", function() {
 
     emailError.innerText = "";
     passwordError.innerText = "";
+
     email.classList.remove("input-error");
     password.classList.remove("input-error");
 
     let isValid = true;
 
-    if (email.value === "") {
+    if (email.value.trim() === "") {
         emailError.innerText = "Email is required";
         email.classList.add("input-error");
         isValid = false;
@@ -24,7 +28,7 @@ function validateForm() {
         isValid = false;
     }
 
-    if (password.value === "") {
+    if (password.value.trim() === "") {
         passwordError.innerText = "Password is required";
         password.classList.add("input-error");
         isValid = false;
@@ -35,5 +39,10 @@ function validateForm() {
         isValid = false;
     }
 
-    return isValid;
-}
+    if (isValid) {
+        successMsg.style.display = "block";
+        email.value = "";
+        password.value = "";
+        alert("Login successfully!");
+    }
+});
