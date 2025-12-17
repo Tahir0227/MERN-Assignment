@@ -1,17 +1,22 @@
-function addTodo() {
-    let input = document.getElementById("todos");
-    let text = input.value.trim();
+const addBtn = document.getElementById("addBtn");
+const input = document.getElementById("todos");
+const list = document.getElementById("list");
 
-    if (text === "") {
-        return;
-    }
+addBtn.addEventListener("click", function() {
+    const text = input.value;
+    if(text === "") return;
 
-    let li = document.createElement("li");
-    li.innerHTML = `
-        <span>${text}</span>
-        <button class="delete" onclick="this.parentElement.remove()">Delete</button>
-    `;
+    const li = document.createElement("li");
+    li.innerHTML = `<span>${text}</span>
+                    <button class="delete" onclick="deleteTodo(this)">Delete</button>`;
 
-    document.getElementById("list").appendChild(li);
+
+    list.appendChild(li);
     input.value = "";
+});
+
+function deleteTodo(button) {
+    const li = button.parentElement;
+    li.remove();
 }
+    
